@@ -1,0 +1,6 @@
+Flask
+Flask-MySQLdb
+mysqlclient
+ldap3
+dotenv
+SQLAlchemy

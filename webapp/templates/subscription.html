@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block banner %}
+	<h1 class="display-5">Subscription</h1>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="form-container">
+            <form class="plan-selection" method="POST" action="{{ url_for('routes.subscription') }}">
+                <div class="form-check card plan-card">
+                    <label class="form-check-label card-body" for="Free">
+                        <div class="plan-content">
+                            {% if args['current_subscription'] == 'Free' %}
+                                <input class="form-check-input" type="radio" name="plan" id="Free" value="Free" checked>
+                            {% else %}
+                                <input class="form-check-input" type="radio" name="plan" id="Free" value="Free">
+                            {% endif %}
+                            <div class="plan-text">
+                                <div class="plan-title">Free</div>
+                                <p class="plan-description">You might be able to tell what you are watching, ads make up 50% of watchtime.</p>
+                                <div class="plan-price">$0.00 / month</div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            
+                <div class="form-check card plan-card">
+                    <label class="form-check-label card-body" for="Basic">
+                        <div class="plan-content">
+                            {% if args['current_subscription'] == 'Basic' %}
+                                <input class="form-check-input" type="radio" name="plan" id="Basic" value="Basic" checked>
+                            {% else %}
+                                <input class="form-check-input" type="radio" name="plan" id="Basic" value="Basic">
+                            {% endif %}
+                            <div class="plan-text">
+                                <div class="plan-title">Basic</div>
+                                <p class="plan-description">HD streaming, a normal number of ads.</p>
+                                <div class="plan-price">$9.99 / month</div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            
+                <div class="form-check card plan-card">
+                    <label class="form-check-label card-body" for="Premium">
+                        <div class="plan-content">
+                            {% if args['current_subscription'] == 'Premium' %}
+                                <input class="form-check-input" type="radio" name="plan" id="Premium" value="Premium" checked>
+                            {% else %}
+                                <input class="form-check-input" type="radio" name="plan" id="Premium" value="Premium">
+                            {% endif %}
+                            <div class="plan-text">
+                                <div class="plan-title">Premium</div>
+                                <p class="plan-description">4K streaming, no ads.</p>
+                                <div class="plan-price-premium">$24.99 / month</div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="form-check card plan-card">
+                    <label class="form-check-label card-body" for="Premium_pp">
+                        <div class="plan-content">
+                            {% if args['current_subscription'] == 'Premium++' %}
+                                <input class="form-check-input" type="radio" name="plan" id="Premium_pp" value="Premium++" checked>
+                            {% else %}
+                                <input class="form-check-input" type="radio" name="plan" id="Premium_pp" value="Premium++">
+                            {% endif %}
+                            <div class="plan-text">
+                                <div class="plan-title">Premium++</div>
+                                <p class="plan-description">32K streaming, access to our AI-generated original content.</p>
+                                <div class="plan-price-premium">$49.99 / month</div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="form-check card plan-card" hidden>
+                    <label class="form-check-label card-body" for="super">
+                        <div class="plan-content">
+                            <input class="form-check-input" type="radio" name="plan" id="super" value="super">
+                            <div class="plan-text">
+                                <div class="plan-title">Premium Pro+</div>
+                                <p class="plan-description">You're a DA now</p>
+                                <div class="plan-price-premium">$149.99 / month</div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            
+                <button type="submit" class="btn btn-primary w-100 submit-btn">Continue</button>
+            </form>
+        </div>            
+    </div>
+{% endblock %}

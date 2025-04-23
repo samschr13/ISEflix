@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block banner %}
+    <h1 class="display-4">Welcome to ISEflix</h1>
+    <p class="lead">Stream your favorite movies and shows anytime, anywhere.</p>
+{% endblock %}
+{% block content %}
+    <div class="text-center">
+        <section class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Why Choose ISEflix?</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>Unlimited Streaming</h3>
+                        <p>Enjoy endless entertainment with no limits on what you can watch.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Flexible Plans</h3>
+                        <p>Choose a subscription plan that fits your needs and budget.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Watch Anywhere</h3>
+                        <p>Stream on your TV, laptop, tablet, or phone—anytime, anywhere.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section py-5 text-light w-75 mx-auto">
+            <div class="container">
+                <h2>Ready to Start Watching?</h2>
+                <p>Sign up today and explore a world of entertainment.</p>
+                <a href="{{ url_for('auth.register') }}" class="btn btn-primary btn-lg custom-btn">Get Started</a>
+            </div>
+        </section>
+    </div>
+{% endblock %}
